@@ -11,12 +11,16 @@ int main()
     bool flag=false;
     int ind1=0,ind2=0,ind3=0;
     vector<int>ans;
+    unordered_map<int,int>mp;
     for(int i=0;i<n;i++)
     {
-        unordered_map<int,int>mp;
         
-        for(int j=i+1;j<n;j++)
+        
+        for(int j=0;j<n;j++)
         {
+            if(j==i)
+                continue;
+            
             if(mp.find(arr[j]-arr[i])!=mp.end())
             {
                 //cout<<i<<" "<<mp[arr[j]-arr[i]]<<" "<<j<<endl;
@@ -26,6 +30,7 @@ int main()
                 flag=true;
                 break;
             }
+            
             mp[arr[j]]=j;
         }
         if(flag==true)
