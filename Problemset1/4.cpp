@@ -13,7 +13,8 @@ vector<vector<int>>matrixmultiplication(vector<vector<int>>&a,vector<vector<int>
                 ans1=(ans1+(a[i][k]*b[k][j])%mod)%mod;
             }
             
-       
+            if(ans1<0)
+               ans1+=mod;
             ans[i][j]=ans1;
             
         }
